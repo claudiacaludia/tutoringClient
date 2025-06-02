@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+h2 {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply my-2;
+}
+
+button, .inputField{
+  @apply p-2;
+  @apply rounded;
+  @apply shadow-lg;
+}
+
+.inputField{
+  @apply placeholder-neutral-500;
+  @apply w-full;
+}

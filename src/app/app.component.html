@@ -1,0 +1,38 @@
+<div class="flex justify-between bg-violet-300 px-8 py-4 shadow-md mb-12">
+  <h1 class="rounded-xl  font-semibold text-3xl text-center p-6 font-stretch-semi-expanded">Nachhilfe App</h1>
+
+  <ul class="my-2 rounded-xl flex justify-center gap-4 items-center">
+    <li class="flex flex-col gap-1 items-center">
+      <a routerLink="/appointments" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white"> <!--hover:bg-violet-600 hover:text-white bg-neutral-50-->
+        <img src="/assets/icons/home.png" alt="home" class="w-10 h-10">
+      </a>
+      <p class="text-xs">Home</p>
+    </li>
+    @if(isLoggedIn()) {
+      <li class="flex flex-col gap-1 items-center">
+        <a routerLink="own-appointments" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+          <img src="/assets/icons/calendar.png" alt="home" class="w-10 h-10">
+        </a>
+        <p class="text-xs">Deine Termine</p>
+      </li>
+    }
+    @if(isLoggedIn() && authService.isTutor()) {
+      <li class="flex flex-col gap-1 items-center">
+        <a routerLink="appointment-form" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+          <img src="/assets/icons/plus.png" alt="home" class="w-10 h-10">
+        </a>
+        <p class="text-xs">Neuer Termin</p>
+      </li>
+    }
+    <li class="flex flex-col gap-1 items-center">
+      <a routerLink="login" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+        <img src="/assets/icons/user.png" alt="home" class="w-10 h-10">
+      </a>
+      <p class="text-xs">{{ getLabel() }}</p>
+    </li>
+  </ul>
+</div>
+
+
+
+<router-outlet />

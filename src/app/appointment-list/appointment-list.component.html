@@ -1,0 +1,27 @@
+<!--@if(isLoggedIn()){
+  <bs-appointment-container>
+    <h2 class="mx-4">Deine Termine | {{title}}</h2>
+    @if(authService.isTutor()){
+      @for (appointment of tutorAppointments.value(); track appointment) {
+        &lt;!&ndash;<a class="listItemClass" [appointment]="appointment"  [routerLink]="appointment.id"></a>&ndash;&gt;
+        <a class="listItemClass" [appointment]="appointment" [routerLink]="['/appointments', appointment.id]"></a>
+      }
+    } @else {
+      @for (appointment of studentAppointments.value(); track appointment) {
+        &lt;!&ndash;<a class="listItemClass" [appointment]="appointment"  [routerLink]="appointment.id"></a>&ndash;&gt;
+        <a class="listItemClass" [appointment]="appointment" [routerLink]="['/appointments', appointment.id]"></a>
+      }
+    }
+
+  </bs-appointment-container>
+}-->
+
+<bs-appointment-container>
+  <h2 class="mx-4">{{title}}</h2>
+  @for (appointment of appointment.value(); track appointment) {
+    <!--<a class="listItemClass" [appointment]="appointment"  [routerLink]="appointment.id"></a>-->
+    <a class="listItemClass" [appointment]="appointment" [routerLink]="[routerLink, appointment.id]"></a>
+  }
+</bs-appointment-container>
+
+

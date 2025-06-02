@@ -1,0 +1,60 @@
+<div class="w-11/12 m-auto mt-8">
+  <h2>Neuen Termin erstellen</h2>
+
+  <form class="flex flex-col gap-y-4" [formGroup]="appointmentForm" (ngSubmit)="submitForm()">
+    <div class="">
+      <label>Beschreibung</label>
+      <input type="text" class="inputField" placeholder="Dieser Termin ist ideal für ..." formControlName="description">
+      @if (errors['description']){
+        <div class="text-red-500 mx-2">{{errors['description']}}</div>
+      }
+    </div>
+    <div class="">
+      <label>Preis</label>
+      <div class="inputField items-center bg-neutral-50 rounded px-2 relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">€</span>
+        <input type="number" class="bg-neutral-50 flex-1 px-2 pl-7 pr-2 py-1 w-full " formControlName="price">
+      </div>
+      @if (errors['price']){
+        <div class="text-red-500 mx-2">{{errors['price']}}</div>
+      }
+    </div>
+
+    <div class="">
+      <label>Uhrzeit</label>
+      <input type="datetime-local" class="bg-neutral-50 inputField " formControlName="proposed_time">
+      @if (errors['proposed_time']){
+        <div class="text-red-500">{{errors['proposed_time']}}</div>
+      }
+    </div>
+    <div class="">
+      <label>Status</label>
+      <select class="bg-neutral-50 inputField" formControlName="status">
+        <option value="open" selected>Offen</option>
+        <option value="proposed_by_student">Angefragt von Student*in</option>
+        <option value="rejected">Abgelehnt</option>
+        <option value="confirmed">Bestätigt</option>
+      </select>
+      @if (errors['status']) {
+        <div class="text-red-500">{{ errors['status'] }}</div>
+      }
+    </div>
+    <div class="">
+      <label>Topic</label>
+      <select class="bg-neutral-50 inputField" formControlName="topic_id">
+        @for (topic of topics; track topic.id) {
+          <option [value]="topic.id">{{ topic.name }} </option>
+        }
+      </select>
+      @if (errors['topic_id']){
+        <div class="text-red-500">{{ errors['topic_id'] }}</div>
+      }
+    </div>
+
+
+    <button type="submit" class="bg-violet-600 text-white hover:bg-violet-700 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed" [disabled]="appointmentForm.invalid">Speichern</button>
+
+
+  </form>
+
+</div>
