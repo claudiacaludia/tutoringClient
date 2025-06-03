@@ -44,7 +44,7 @@ export class AppointmentDetailComponent implements OnInit{
         this.as.remove(this.appointment()!.id).subscribe(
           () => {
             this.toastr.success('The appointment has been deleted',"Tutoring App");
-            this.router.navigate(['/appointments']);
+            this.router.navigate(['/own-appointments']);
           }, () => {
             this.toastr.error('Appointment could not be deleted',"Tutoring App");
           }
