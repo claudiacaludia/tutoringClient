@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 import {DateValidator} from '../shared/date-validator';
 
 @Component({
-  selector: 'bs-appointment-form',
+  selector: 'ta-appointment-form',
   imports: [
     ReactiveFormsModule
   ],
@@ -81,7 +81,7 @@ export class AppointmentFormComponent implements OnInit{
     const appointment: Appointment = AppointmentFactory.fromObject(this.appointmentForm.value);
     if(this.isUpdatingAppointment){
       this.as.update(appointment).subscribe(() => {
-        this.router.navigate(['/appointments', appointment.id]);
+        this.router.navigate(['/own-appointments', appointment.id]);
       });
     } else {
       appointment.tutor_id = this.authService.getCurrentUserId();

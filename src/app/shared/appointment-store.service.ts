@@ -27,34 +27,6 @@ export class AppointmentStoreService {
   }
 
 
-  /*getAllSearch(searchTerm: string): Observable<Array<Appointment>> {
-    return this.http.get<Array<Appointment>>(`${this.api}/books/search/${searchTerm}`).
-    pipe(retry(3)).pipe(catchError(this.errorHandler));
-  }
-
-  create(appointment: Appointment): Observable<any> {
-    return this.http.post<Appointment>(`${this.api}/books`, appointment).
-    pipe(retry(3)).pipe(catchError(this.errorHandler));
-  }
-
-  update(appointment: Appointment): Observable<any> {
-    return this.http.put<Appointment>(`${this.api}/books/${appointment.isbn}`, appointment).
-    pipe(retry(3)).pipe(catchError(this.errorHandler));
-  }
-
-  check(isbn: string): Observable<Boolean> {
-    return this.http.get<Boolean>(`${this.api}/books/checkisbn/${isbn}`).
-    pipe(retry(3)).pipe(catchError(this.errorHandler));
-  }
-
-  getAllSearchViaFetch(searchTerm: string,abortSignal: AbortSignal): Promise<Response> {
-    return fetch(`${this.api}/books/search/${searchTerm}`,{signal:abortSignal});
-  }
-
-  remove(isbn: string): Observable<Appointment> {
-    return this.http.delete<any>(`${this.api}/books/${isbn}`).
-    pipe(retry(3)).pipe(catchError(this.errorHandler));
-  }*/
 
   private errorHandler(error: Error | any): Observable<any> {
     return throwError(error);

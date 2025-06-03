@@ -1,18 +1,18 @@
 
 <div class="w-11/12 m-auto">
     @if(authService.isTutor()) {
-      <bs-appointment-list
-        [title]="'Deine Termine'"
+      <ta-appointment-list
+        [title]="'Your appointments'"
         [api_route]="'/appointments/tutor/' + authService.getCurrentUserId()"
         [routerLink]="'/own-appointments'"
       >
-      </bs-appointment-list>
+      </ta-appointment-list>
     } @else {
-      <bs-appointment-list
-        [title]="'Deine Termine'"
+      <ta-appointment-list
+        [title]="'Your appointments'"
         [api_route]="'/appointments/student/' + authService.getCurrentUserId()"
         [routerLink]="'/own-appointments'"
       >
-      </bs-appointment-list>
+      </ta-appointment-list>
     }
 </div>

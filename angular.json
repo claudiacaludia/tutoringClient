@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "bs",
+      "prefix": "ta",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",

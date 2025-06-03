@@ -3,7 +3,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {AuthenticationService} from './shared/authentification.service';
 
 @Component({
-  selector: 'bs-root',
+  selector: 'ta-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

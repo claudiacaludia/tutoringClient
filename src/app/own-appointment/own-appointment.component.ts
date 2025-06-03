@@ -4,7 +4,7 @@ import {AuthenticationService} from '../shared/authentification.service';
 import {AppointmentListComponent} from '../appointment-list/appointment-list.component';
 
 @Component({
-  selector: 'bs-own-appointment',
+  selector: 'ta-own-appointment',
   imports: [
     AppointmentListComponent
   ],

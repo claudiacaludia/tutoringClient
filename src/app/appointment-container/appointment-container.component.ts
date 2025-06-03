@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'bs-appointment-container',
+  selector: 'ta-appointment-container',
   imports: [],
   templateUrl: './appointment-container.component.html',
   styles: ``

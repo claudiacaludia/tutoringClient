@@ -6,10 +6,10 @@ export class ErrorMessage {
   ) { }
 }
 export const AppointmentFormErrorMessages = [
-  new ErrorMessage('description', 'required', 'Eine Beschreibung muss angegeben werden'),
-  new ErrorMessage('price', 'required', 'Ein Preis muss angegeben werden'),
-  new ErrorMessage('proposed_time', 'required', 'Es muss ein Termin angegeben werden'),
-  new ErrorMessage('proposed_time', 'pastDate', 'Der Termin muss in der Zukunft liegen'),
-  new ErrorMessage('status', 'required', 'Es muss ein Status angegeben werden'),
-  new ErrorMessage('topic', 'required', 'Es muss ein Thema angegeben werden'),
+  new ErrorMessage('description', 'required', 'Description is required'),
+  new ErrorMessage('price', 'required', 'Price is required'),
+  new ErrorMessage('proposed_time', 'required', 'Appointment time is required'),
+  new ErrorMessage('proposed_time', 'pastDate', 'Time must be in the future'),
+  new ErrorMessage('status', 'required', 'Status is required'),
+  new ErrorMessage('topic', 'required', 'Topic is required'),
 ];

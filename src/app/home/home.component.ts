@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AppointmentListComponent} from '../appointment-list/appointment-list.component';
 import {AuthenticationService} from '../shared/authentification.service';
 @Component({
-  selector: 'bs-home',
+  selector: 'ta-home',
   templateUrl: './home.component.html',
   styles: ``,
   imports: [

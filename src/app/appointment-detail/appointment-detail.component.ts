@@ -6,10 +6,9 @@ import {ToastrService} from 'ngx-toastr';
 import {DatePipe} from '@angular/common';
 import {AuthenticationService} from '../shared/authentification.service';
 import {AppointmentFactory} from '../shared/appointment-factory';
-import {AppointmentFormComponent} from '../appointment-form/appointment-form.component';
 
 @Component({
-  selector: 'bs-appointment-detail',
+  selector: 'ta-appointment-detail',
   imports: [
     RouterLink,
     DatePipe
@@ -32,7 +31,6 @@ export class AppointmentDetailComponent implements OnInit{
 
     this.as.getSingle(params['id']).subscribe(
       (a: Appointment) => {
-        console.log('Termin geladen geladen:', a);
         this.appointment.set(a);
       },
     );
@@ -42,13 +40,13 @@ export class AppointmentDetailComponent implements OnInit{
 
   removeAppointment() {
     if(this.appointment()){
-      if(confirm('Willst du den Termin wirklich löschen?')){
+      if(confirm('Do you really want to delete this appointment?')){
         this.as.remove(this.appointment()!.id).subscribe(
           () => {
-            this.toastr.success('Der Termin wurde gelöscht',"Nachhilfe App");
+            this.toastr.success('The appointment has been deleted',"Tutoring App");
             this.router.navigate(['/appointments']);
           }, () => {
-            this.toastr.error('Der Termin konnte nicht gelöscht werden',"Nachhilfe App");
+            this.toastr.error('Appointment could not be deleted',"Tutoring App");
           }
         );
       }
@@ -58,27 +56,26 @@ export class AppointmentDetailComponent implements OnInit{
   acceptAppointment() {
     const appointment = this.appointment();
     if (!appointment){
-      this.toastr.error('Der Termin konnte nicht akzeptiert werden.',"Nachhilfe App");
+      this.toastr.error('The appointment could not be accepted',"Tutoring App");
       return;
     }
     if(!this.authService.isLoggedIn()){
-      this.toastr.warning('Bitte logge dich ein, um ein Angebot anzunehmen.');
+      this.toastr.warning('Please log in to accept an offer.');
       this.router.navigate(['/login']);
     }else {
       appointment.status = 'accepted';
       appointment.student_id = this.authService.getCurrentUserId();
-      if(confirm('Willst du den Termin wirklich annehmen?')){
+      if(confirm('Do you really want to accept the appointment?')){
         this.as.update(appointment).subscribe(
           () => {
-            this.toastr.success('Der Termin wurde angenommen.',"Nachhilfe App");
-            this.router.navigate(['/appointments']);
+            this.toastr.success('The appointment was accepted',"Tutoring App");
+            this.router.navigate(['/own-appointments']);
           }, () => {
-            this.toastr.error('Der Termin konnte nicht angenommen werden',"Nachhilfe App");
+            this.toastr.error('The appointment could not be accepted',"Tutoring App");
           }
         );
       }
     }
-
   }
 
 
@@ -97,7 +94,7 @@ export class AppointmentDetailComponent implements OnInit{
     newAppointment.student_id = this.authService.getCurrentUserId();
 
     this.as.create(newAppointment).subscribe(() => {
-      this.toastr.success('Der Termin wurde angefragt.',"Nachhilfe App");
+      this.toastr.success('The date was requested',"Appointment App");
       this.router.navigate(['/own-appointments']);
     });
   }

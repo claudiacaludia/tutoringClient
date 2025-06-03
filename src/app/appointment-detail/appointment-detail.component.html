@@ -2,14 +2,14 @@
   @let a = appointment();
   @if(a) {
     <div class=" p-4 rounded-xl bg-white shadow-md">
-      <h2 class="text-3xl font-bold mb-6">{{a.topic?.name}} Nachhilfe am {{a.proposed_time | date: 'dd.MM.yyyy HH:mm:ss'}} Uhr</h2>
+      <h2 class="text-3xl font-bold mb-6">{{a.topic?.name}} Tutoring on {{a.proposed_time | date: 'dd.MM.yyyy HH:mm:ss'}}</h2>
       <div>
         <div class="mb-4">
-          <div class="font-bold">Beschreibung: </div>
+          <div class="font-bold">Description: </div>
           <p>{{a.description}}</p>
         </div>
         <div class="mb-4">
-          <div class="font-bold">Preis: </div>
+          <div class="font-bold">Price: </div>
           <p>{{a.price}} €</p>
         </div>
         <div class="mb-4">
@@ -18,20 +18,20 @@
         </div>
         @if(a.status !== 'open') {
           <div class="mb-4">
-            <div class="font-bold">Schüler*in: </div>
+            <div class="font-bold">Student:</div>
             <p>{{a.student?.name}}</p>
           </div>
         }
         <div class="mb-4">
-          <div class="font-bold">Thema: </div>
+          <div class="font-bold">Topic: </div>
           <p>Name: {{a.topic?.name}}</p>
-          <p>Beschreibung: {{a.topic?.description}}</p>
+          <p>Description: {{a.topic?.description}}</p>
         </div>
         <div class="mb-4">
-          <div class="font-bold">Tutor*in: </div>
+          <div class="font-bold">Tutor: </div>
           <p>Name: {{a.tutor?.name}}</p>
-          <p>Ausbildung: {{a.tutor?.education}}</p>
-          <p>Kontaktinformation: {{a.tutor?.contact_info}}</p>
+          <p>Education: {{a.tutor?.education}}</p>
+          <p>Contact information: {{a.tutor?.contact_info}}</p>
         </div>
 
 
@@ -40,7 +40,7 @@
             [routerLink]="'/appointments'"
             class="border-violet-600 border  text-violet-600 hover:bg-violet-800 hover:text-white"
           >
-            Zurück zu allen Angeboten
+            Back to all appointments
           </button>
 
           @if(!authService.isTutor() && a.status === 'open'){
@@ -48,7 +48,7 @@
                 (click)="acceptAppointment()"
                 class="bg-violet-600 text-white hover:bg-violet-800"
               >
-                Angebot annehmen
+                Accept appointment
               </button>
           }
 
@@ -57,28 +57,30 @@
               (click)="removeAppointment()"
               class="bg-rose-600 text-white hover:bg-rose-800"
             >
-              Angebot löschen
+              Delete appointment
             </button>
 
-            <button
-              [routerLink]="['../../appointment-form', a.id]"
-              class="bg-orange-500 text-white hover:bg-orange-700"
-            >
-              Angebot bearbeiten
-            </button>
+            @if (a.status != "confirmed"){
+              <button
+                [routerLink]="['../../appointment-form', a.id]"
+                class="bg-orange-500 text-white hover:bg-orange-700"
+              >
+                Edit appointment
+              </button>
+            }
           }
         </div>
 
         @if(!authService.isTutor()){
           <hr class="my-8 border-neutral-300">
-          <h3 class=" text-xl text-center mb-4">Nicht der richtige Zeitpunkt dabei? Dann frage einen anderen an: </h3>
+          <h3 class=" text-xl text-center mb-4">Not the right time? Request a different time: </h3>
           <div class="flex flex-row gap-4 mb-8">
             <input type="datetime-local" #proposedDateInput class="bg-neutral-50 inputField">
             <button
               (click)="requestAppointment(proposedDateInput.value)"
               class="bg-violet-600 text-white hover:bg-violet-800"
             >
-              Neues Angebot anfragen
+              Request new appointment
             </button>
           </div>
         }

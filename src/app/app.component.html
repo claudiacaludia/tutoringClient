@@ -1,32 +1,32 @@
-<div class="flex justify-between bg-violet-300 px-8 py-4 shadow-md mb-12">
-  <h1 class="rounded-xl  font-semibold text-3xl text-center p-6 font-stretch-semi-expanded">Nachhilfe App</h1>
+<div class="flex justify-between bg-violet-300 md:px-8 px-1 py-4 shadow-md mb-12">
+  <h1 class="rounded-xl font-semibold md:text-3xl text-md text-center p-6 font-stretch-semi-expanded">Tutoring App</h1>
 
   <ul class="my-2 rounded-xl flex justify-center gap-4 items-center">
-    <li class="flex flex-col gap-1 items-center">
-      <a routerLink="/appointments" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white"> <!--hover:bg-violet-600 hover:text-white bg-neutral-50-->
-        <img src="/assets/icons/home.png" alt="home" class="w-10 h-10">
+    <li class="flex flex-col md:gap-1 gap-0 items-center">
+      <a routerLink="/appointments" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white"> <!--hover:bg-violet-600 hover:text-white bg-neutral-50-->
+        <img src="/assets/icons/home.png" alt="home" class="md:w-10 md:h-10 w-6 h-6 ">
       </a>
       <p class="text-xs">Home</p>
     </li>
     @if(isLoggedIn()) {
       <li class="flex flex-col gap-1 items-center">
-        <a routerLink="own-appointments" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-          <img src="/assets/icons/calendar.png" alt="home" class="w-10 h-10">
+        <a routerLink="own-appointments" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+          <img src="/assets/icons/calendar.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
         </a>
-        <p class="text-xs">Deine Termine</p>
+        <p class="text-xs">Own</p>
       </li>
     }
     @if(isLoggedIn() && authService.isTutor()) {
       <li class="flex flex-col gap-1 items-center">
-        <a routerLink="appointment-form" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-          <img src="/assets/icons/plus.png" alt="home" class="w-10 h-10">
+        <a routerLink="appointment-form" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+          <img src="/assets/icons/plus.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
         </a>
-        <p class="text-xs">Neuer Termin</p>
+        <p class="text-xs">New</p>
       </li>
     }
     <li class="flex flex-col gap-1 items-center">
-      <a routerLink="login" class="w-14 h-14 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-        <img src="/assets/icons/user.png" alt="home" class="w-10 h-10">
+      <a routerLink="login" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+        <img src="/assets/icons/user.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
       </a>
       <p class="text-xs">{{ getLabel() }}</p>
     </li>

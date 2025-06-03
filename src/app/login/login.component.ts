@@ -10,10 +10,9 @@ interface Response{
 }
 
 @Component({
-  selector: 'bs-login',
+  selector: 'ta-login',
   imports: [
-    ReactiveFormsModule,
-    AppointmentListComponent
+    ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
   styles: ``
@@ -44,7 +43,7 @@ export class LoginComponent implements OnInit{
         this.authService.setSessionStorage((res as Response).access_token);
         this.router.navigateByUrl("/")
       }, () => {
-        this.toastr.error('Inkorrekte Login Daten!','Login fehlgeschlagen')
+        this.toastr.error('Incorrect login data!','Appointment App')
       }
     )
   }

@@ -13,6 +13,6 @@ export class Appointment {
     public topic_id: number,
     public tutor?: User,
     public student?: User | null,
-    public topic?: Topic
+    public topic?: Topic,
   ) {}
 }
