@@ -5,7 +5,7 @@ import {AuthenticationService} from '../shared/authentification.service';
 import {ToastrService} from 'ngx-toastr';
 import {AppointmentListComponent} from '../appointment-list/appointment-list.component';
 
-interface Response{
+interface Response{ //TypeScript bietet Interfaces an, um eine öffentliche Schnittstelle zu beschreiben
   access_token: string;
 }
 

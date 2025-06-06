@@ -1,6 +1,6 @@
 import {Appointment} from './appointment';
 
-export class AppointmentFactory {
+export class AppointmentFactory { //Hilfsklasse, die neue Instanzen eines bestimmten Objekts erstellt
   static empty() : Appointment {
     return new Appointment(0, '', 0, '', '', 0, null, 0, );
   }

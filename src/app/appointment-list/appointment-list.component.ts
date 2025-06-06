@@ -42,7 +42,7 @@ export class AppointmentListComponent implements OnInit {
     () => `${api_url}/subjects`,
   );
 
-  groupedAppointments = computed(() => {
+  groupedAppointments = computed(() => { //read-only signal
     const subjects = this.subjects.value();
     const appointments = this.appointment.value();
 

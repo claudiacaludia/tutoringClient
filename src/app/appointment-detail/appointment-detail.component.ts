@@ -26,7 +26,7 @@ export class AppointmentDetailComponent implements OnInit{
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit() { // wird einmalig beim ersten Laden der Komponente aufgerufen
     const params = this.route.snapshot.params;
 
     this.as.getSingle(params['id']).subscribe(
@@ -34,7 +34,6 @@ export class AppointmentDetailComponent implements OnInit{
         this.appointment.set(a);
       },
     );
-
 
   }
 
@@ -94,7 +93,7 @@ export class AppointmentDetailComponent implements OnInit{
     newAppointment.student_id = this.authService.getCurrentUserId();
 
     this.as.create(newAppointment).subscribe(() => {
-      this.toastr.success('The date was requested',"Appointment App");
+      this.toastr.success('The appointment was requested',"Appointment App");
       this.router.navigate(['/own-appointments']);
     });
   }

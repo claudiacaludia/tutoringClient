@@ -1,7 +1,7 @@
 <div class="w-11/12 m-auto mt-8">
   <h2 class="text-center font-stretch-semi-expanded text-violet-800">Creat new appointment</h2>
 
-  <form class="flex flex-col gap-y-4" [formGroup]="appointmentForm" (ngSubmit)="submitForm()">
+  <form class="flex flex-col gap-y-4" [formGroup]="appointmentForm" (ngSubmit)="submitForm()"> <!--bindung an model-->
     <div class="">
       <label>Description</label>
       <input type="text" class="inputField" placeholder="This appointment is ideal for..." formControlName="description">

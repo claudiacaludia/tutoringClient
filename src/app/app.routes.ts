@@ -7,7 +7,7 @@ import {canNavigateToNewAppointment} from './can-navigate-to-new-appointment';
 import {OwnAppointmentComponent} from './own-appointment/own-appointment.component';
 
 export const routes: Routes = [
-  {path:'', redirectTo:'appointments', pathMatch:'full'},
+  {path:'', redirectTo:'appointments', pathMatch:'full'}, //ganze route muss übereinstimmen
   {path:'appointments', component: HomeComponent},
   {path:'appointments/:id', component: AppointmentDetailComponent},
   {path:'own-appointments', component: OwnAppointmentComponent},

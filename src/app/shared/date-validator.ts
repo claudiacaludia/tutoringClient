@@ -10,6 +10,6 @@ export class DateValidator {
     if (selectedDate < now) {
       return { pastDate: true };
     }
-    return null; // ✅ alles ok
+    return null;
   }
 }

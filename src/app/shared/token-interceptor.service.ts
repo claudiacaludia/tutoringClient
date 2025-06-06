@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
+@Injectable({ //	Markiert die Klasse als Service für DI.
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {

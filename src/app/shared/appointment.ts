@@ -1,7 +1,7 @@
 import { Topic } from './topic';
 import { User } from './user';
 
-export class Appointment {
+export class Appointment { //Modell
   constructor(
     public id: number,
     public description: string,

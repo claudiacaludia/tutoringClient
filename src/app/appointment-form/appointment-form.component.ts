@@ -30,7 +30,7 @@ export class AppointmentFormComponent implements OnInit{
               private route:ActivatedRoute, private router:Router,
               private authService:AuthenticationService,
               private http: HttpClient){
-    this.appointmentForm = this.fb.group({});
+    this.appointmentForm = this.fb.group({}); //formmodell definieren
   }
 
   ngOnInit() {
@@ -61,7 +61,7 @@ export class AppointmentFormComponent implements OnInit{
       student_id: this.appointment.student_id,
       topic_id: this.appointment.topic_id,
     })
-    this.appointmentForm.statusChanges.subscribe(()=>{
+    this.appointmentForm.statusChanges.subscribe(()=>{ //Observable
       this.updateErrorMessages();
     })
   }
