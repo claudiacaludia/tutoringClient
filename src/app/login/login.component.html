@@ -26,7 +26,7 @@
           }
         </div>
         <div class="flex justify-end">
-          <button type="submit" class="bg-violet-600 text-white hover:bg-violet-800 mt-4" [disabled]="loginForm.invalid">Login</button>
+          <button type="submit" class="bg-indigo-600 text-white hover:bg-indigo-800 mt-4" [disabled]="loginForm.invalid">Login</button>
         </div>
         </form>
     </div>
@@ -34,7 +34,7 @@
   @if(isLoggedIn()){
     <img src="/assets/img/dont_go.jpg" alt="home" class="w-4/12 h-4/12 m-auto">
     <div class="flex justify-end">
-      <button type="button" class="bg-violet-600 text-white hover:bg-violet-800 mt-4" (click)="logout()">Logout</button>
+      <button type="button" class="bg-indigo-600 text-white hover:bg-indigo-800 mt-4" (click)="logout()">Logout</button>
     </div>
   }
 </div>

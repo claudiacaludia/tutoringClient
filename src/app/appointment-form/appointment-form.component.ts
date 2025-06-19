@@ -10,11 +10,13 @@ import {Appointment} from '../shared/appointment';
 import {catchError, retry} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {DateValidator} from '../shared/date-validator';
+import {AppointmentContainerComponent} from '../appointment-container/appointment-container.component';
 
 @Component({
   selector: 'ta-appointment-form',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppointmentContainerComponent
   ],
   templateUrl: './appointment-form.component.html',
   styles: ``

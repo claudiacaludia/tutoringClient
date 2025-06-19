@@ -38,7 +38,7 @@
         <div class="flex flex-row gap-4">
           <button
             [routerLink]="'/appointments'"
-            class="border-violet-600 border  text-violet-600 hover:bg-violet-800 hover:text-white"
+            class="border-indigo-600 border  text-indigo-600 hover:bg-indigo-800 hover:text-white"
           >
             Back to all appointments
           </button>
@@ -46,7 +46,7 @@
           @if(!authService.isTutor() && a.status === 'open'){
               <button
                 (click)="acceptAppointment()"
-                class="bg-violet-600 text-white hover:bg-violet-800"
+                class="bg-indigo-600 text-white hover:bg-indigo-800"
               >
                 Accept appointment
               </button>
@@ -78,7 +78,7 @@
             <input type="datetime-local" #proposedDateInput class="bg-neutral-50 inputField">
             <button
               (click)="requestAppointment(proposedDateInput.value)"
-              class="bg-violet-600 text-white hover:bg-violet-800"
+              class="bg-indigo-600 text-white hover:bg-indigo-800"
             >
               Request new appointment
             </button>

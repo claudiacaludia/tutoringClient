@@ -1,17 +1,28 @@
-<div class="flex justify-between bg-violet-300 md:px-8 px-1 py-4 shadow-md mb-12">
-  <h1 class="rounded-xl font-semibold md:text-3xl text-md text-center p-6 font-stretch-semi-expanded">Tutoring App</h1>
+<div class="flex justify-between bg-neutral-50 md:px-10 px-3 py-2 shadow-md mb-12">
+  <h1 class="rounded-xl capitalize font-semibold md:text-3xl text-md text-center p-6 font-stretch-semi-expanded text-indigo-800">Teachify 👩🏻‍🏫</h1>
 
   <ul class="my-2 rounded-xl flex justify-center gap-4 items-center">
     <li class="flex flex-col md:gap-1 gap-0 items-center">
-      <a routerLink="/appointments" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white"> <!--hover:bg-violet-600 hover:text-white bg-neutral-50-->
-        <img src="/assets/icons/home.png" alt="home" class="md:w-10 md:h-10 w-6 h-6 ">
+      <a routerLink="/appointments" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#372aac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="40" height="40">
+          <path d="M3 11l9-8 9 8"/>
+          <path d="M5 11v10h5v-6h4v6h5V11"/>
+        </svg>
+
+
       </a>
       <p class="text-xs">Home</p>
     </li>
     @if(isLoggedIn()) {
       <li class="flex flex-col gap-1 items-center">
         <a routerLink="own-appointments" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-          <img src="/assets/icons/calendar.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#372aac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="40" height="40">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+
         </a>
         <p class="text-xs">Own</p>
       </li>
@@ -19,14 +30,23 @@
     @if(isLoggedIn() && authService.isTutor()) {
       <li class="flex flex-col gap-1 items-center">
         <a routerLink="appointment-form" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-          <img src="/assets/icons/plus.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#372aac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="40" height="40">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+
         </a>
         <p class="text-xs">New</p>
       </li>
     }
     <li class="flex flex-col gap-1 items-center">
       <a routerLink="login" class="md:w-14 md:h-14 w-10 h-10 text-sm rounded-full text-center p-2 " routerLinkActive="bg-white">
-        <img src="/assets/icons/user.png" alt="home" class="md:w-10 md:h-10 w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#372aac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="40" height="40">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+
+
       </a>
       <p class="text-xs">{{ getLabel() }}</p>
     </li>

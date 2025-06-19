@@ -2,26 +2,28 @@
 
 @if(a) {
   <div class="m-4 bg-neutral-50 shadow-md p-6 rounded-xl hover:bg-neutral-100">
-    <h2 class="text-xl text-neutral-800 font-bold">{{a.topic?.subject?.name}} {{a.topic?.name}} Tutoring on {{a.proposed_time | date: 'dd.MM.yyyy HH:mm'}}</h2>
-    <p class="my-2">{{a.description}}</p>
-    <div class="flex gap-6 flex-wrap">
-      <p class="bg-violet-500 text-white px-2 py-1 rounded-xl">ID: {{a.id}}</p>
-      <p class="bg-violet-500 text-white px-2 py-1 rounded-xl">Subject ID: {{a.topic?.subject_id}}</p>
-      <p class="bg-violet-400 text-white px-2 py-1 rounded-xl">Tutor: {{a.tutor?.name}}</p>
-      <p class="bg-violet-300 px-2 py-1 rounded-xl">Price: {{a.price}} €</p>
-      @if(a.student?.name) {
-        <p class="bg-violet-200 px-2 py-1 rounded-xl">Student: {{a.student?.name}}</p>
-      }
-      @let statusColor = {
-        proposed_by_student: 'bg-orange-200',
-        rejected: 'bg-rose-200',
-        confirmed: 'bg-emerald-200',
-        open: 'bg-green-200'
-      }[a.status];
+    <div class="md:flex md:gap-10 md:items-center ">
+      <h2 class="text-xl text-neutral-800 font-bold">{{a.topic?.subject?.name}} {{a.topic?.name}} Tutoring on {{a.proposed_time | date: 'dd.MM.yyyy HH:mm'}}</h2>
+      <div class="flex gap-2 flex-wrap items-center">
+<!--        <p class="bg-indigo-500 text-white px-2 py-1 rounded-xl">ID: {{a.id}}</p>-->
+        <p class="bg-indigo-400 text-white px-2 py-1 rounded-xl">Tutor: {{a.tutor?.name}}</p>
+        <p class="bg-indigo-300 px-2 py-1 rounded-xl">Price: {{a.price}} €</p>
+        @if(a.student?.name) {
+          <p class="bg-indigo-200 px-2 py-1 rounded-xl">Student: {{a.student?.name}}</p>
+        }
+        @let statusColor = {
+          proposed_by_student: 'bg-orange-200',
+          rejected: 'bg-rose-200',
+          confirmed: 'bg-emerald-200',
+          open: 'bg-green-200'
+        }[a.status];
 
-      @if (statusColor) {
-        <p class="{{statusColor}} px-2 py-1 rounded-xl">Status: {{a.status}}</p>
-      }
+        @if (statusColor) {
+          <p class="{{statusColor}} px-2 py-1 rounded-xl">Status: {{a.status}}</p>
+        }
+      </div>
     </div>
+    <p class="my-2">{{a.description}}</p>
+
   </div>
 }

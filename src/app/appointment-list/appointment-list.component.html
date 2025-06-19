@@ -1,5 +1,5 @@
 <ta-appointment-container>
-  <h2 class="text-center font-stretch-semi-expanded text-violet-800">{{title}}</h2>
+  <h2 class="text-center font-stretch-semi-expanded text-indigo-700">{{title}}</h2>
   @for (subjectGroup of groupedAppointments(); track subjectGroup.subject.id) {
   <h2 class="text-xl font-semibold mt-6 ml-2">{{ subjectGroup.subject.name }}</h2>
     @if (subjectGroup.appointments?.length === 0) {
